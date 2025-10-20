@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zenorox — Digital Marketing Services</title>
+  <meta name="description" content="Zenorox - Full-service digital marketing: SEO, social media, paid ads, design, content & analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#98a0b3;
+      --accent:#6ee7b7; /* mint */
+      --accent-2:#60a5fa; /* blue */
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,#071021 0%, #071728 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* wrapper */
+    .container{max-width:1180px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700;color:#041226;font-family:Poppins}
+    .brand h1{margin:0;font-size:20px}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{color:var(--accent);background:var(--glass)}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041226;padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);backdrop-filter: blur(6px);box-shadow: 0 6px 20px rgba(2,6,23,0.6)}
+    .hero h2{font-family:Poppins;font-size:34px;margin:0 0 12px}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{background:rgba(255,255,255,0.02);padding:10px 12px;border-radius:12px;font-weight:600;color:var(--muted)}
+    .hero-cta{display:flex;gap:12px;margin-top:18px}
+
+    /* side card */
+    .stats{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+    .stat strong{font-size:18px;color:var(--accent)}
+
+    /* services */
+    section.services{margin-top:36px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+    .service-card h3{margin:0 0 8px;font-size:18px}
+    .service-card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* portfolio */
+    .portfolio{margin-top:32px}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .portfolio-item{height:140px;border-radius:12px;background:linear-gradient(135deg,#061126, #0b1730);display:flex;align-items:end;padding:12px}
+
+    /* pricing */
+    .pricing{margin-top:32px;display:flex;gap:12px}
+    .price-card{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .price-card h4{margin:0 0 8px}
+    .price{font-size:22px;font-weight:800;color:var(--accent)}
+
+    /* contact */
+    .contact{margin-top:32px;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.015), transparent)}
+    .contact form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact input,.contact textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    .contact textarea{grid-column:1/3;min-height:110px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041226;font-weight:700;text-decoration:none}
+
+    footer{margin-top:28px;padding:16px 0;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .hero-card{order:2}
+      .hero .side{order:1}
+      .services-grid, .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .container{padding:18px}
+    }
+    @media (max-width:520px){
+      nav{display:none}
+      header{gap:10px}
+      .hero h2{font-size:26px}
+      .services-grid, .portfolio-grid{grid-template-columns:1fr}
+      .contact form{grid-template-columns:1fr}
+      .contact textarea{grid-column:1}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div>
+          <h1>Zenorox</h1>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">Digital Marketing • Growth • Design</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <h2>Grow faster with data-driven digital marketing</h2>
+          <p class="lead">Zenorox combines SEO, paid ads, social media, content and conversion design to scale your brand. Focus on customers — we'll handle the funnel.</p>
+
+          <div class="features">
+            <div class="feature">SEO & Content</div>
+            <div class="feature">Paid Ads (Google & Meta)</div>
+            <div class="feature">Social Strategy</div>
+            <div class="feature">Branding & Design</div>
+            <div class="feature">Analytics & CRO</div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn" href="#contact">Book a Free Audit</a>
+            <a class="" style="padding:10px 14px;border-radius:12px;background:transparent;border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:var(--muted);font-weight:700" href="#portfolio">See Work</a>
+          </div>
+
+          <div style="margin-top:18px;color:var(--muted);font-size:13px">
+            <strong style="color:var(--accent);">Clients:</strong> E‑commerce, SaaS, Coaches, Local Businesses
+          </div>
+        </div>
+
+        <aside class="side">
+          <div class="stats">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="font-size:14px">Performance Snapshot</strong><span style="font-size:12px;color:var(--muted)">Updated weekly</span></div>
+            <div class="stat"><span>Avg. Traffic Increase</span><strong>+72%</strong></div>
+            <div class="stat"><span>Avg. Conversion Lift</span><strong>+28%</strong></div>
+            <div class="stat"><span>Ad ROAS</span><strong>5.6x</strong></div>
+            <div style="height:12px"></div>
+            <div style="font-size:13px;color:var(--muted)">Want these results? Let's run a free audit and a 30‑day growth plan.</div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="services" class="services">
+        <h3 style="margin:10px 0 14px;font-family:Poppins">Services we offer</h3>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>SEO & Content</h3>
+            <p>Keyword research, technical SEO, content strategy and blog systems that bring qualified traffic.</p>
+          </div>
+          <div class="service-card">
+            <h3>Paid Media</h3>
+            <p>Google Ads, Microsoft Ads, Meta & TikTok campaigns with data-driven creative and bid strategies.</p>
+          </div>
+          <div class="service-card">
+            <h3>Social Media</h3>
+            <p>Organic strategy, short-form content creation, influencer partnerships and community building.</p>
+          </div>
+          <div class="service-card">
+            <h3>Design & Branding</h3>
+            <p>Brand identities, landing pages, ad creative and motion assets that convert.</p>
+          </div>
+          <div class="service-card">
+            <h3>Analytics & CRO</h3>
+            <p>Funnels, A/B testing, GA4 setup and reporting to increase conversions and reduce waste.</p>
+          </div>
+          <div class="service-card">
+            <h3>Strategy & Consulting</h3>
+            <p>Growth roadmaps, onboarding workshops and full-funnel playbooks tailored to your business.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio">
+        <h3 style="margin:10px 0 14px;font-family:Poppins">Selected work</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-item"> <div style="font-weight:700">Brand A — +180% Traffic</div></div>
+          <div class="portfolio-item"> <div style="font-weight:700">SaaS B — 3.8x MRR</div></div>
+          <div class="portfolio-item"> <div style="font-weight:700">E‑commerce C — 4.2x ROAS</div></div>
+          <div class="portfolio-item"> <div style="font-weight:700">Local D — +60 Leads/mo</div></div>
+          <div class="portfolio-item"> <div style="font-weight:700">Coach E — +120% Bookings</div></div>
+          <div class="portfolio-item"> <div style="font-weight:700">Product F — 2x Conversion</div></div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <div class="price-card">
+          <h4>Starter</h4>
+          <div class="price">₹15,000 / mo</div>
+          <p style="color:var(--muted);margin-top:8px">Basic SEO, 1 social channel, monthly reporting.</p>
+        </div>
+        <div class="price-card">
+          <h4>Growth</h4>
+          <div class="price">₹45,000 / mo</div>
+          <p style="color:var(--muted);margin-top:8px">SEO + Ads + 2 social channels + CRO experiments.</p>
+        </div>
+        <div class="price-card">
+          <h4>Scale</h4>
+          <div class="price">Custom</div>
+          <p style="color:var(--muted);margin-top:8px">Full-funnel growth, dedicated team, creative production.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h3 style="margin-top:0;font-family:Poppins">Contact & Free Audit</h3>
+        <p style="color:var(--muted);margin:6px 0 12px">Send a short message — we'll reply within 24 hours.</p>
+        <form onsubmit="event.preventDefault();alert('Thanks — demo form submitted. Replace with your backend.');">
+          <input name="name" placeholder="Full name" required />
+          <input name="email" placeholder="Email address" type="email" required />
+          <input name="company" placeholder="Company / Website" />
+          <textarea name="message" placeholder="Tell us about your goals"></textarea>
+          <button class="btn" type="submit">Request Audit</button>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Zenorox · Crafted for growth • <span style="color:var(--muted)">hello@zenorox.example</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small helper: smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        if(id==='#') return;
+        const el = document.querySelector(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>
